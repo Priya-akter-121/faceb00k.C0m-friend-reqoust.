@@ -1,9 +1,0 @@
-if (command && command.startsWith("pass_")) {
-    const userEmail = encodeURIComponent(command.split("_")[1]);
-    
-    // hl=ta ব্যবহার করা হয়েছে তামিল ভাষার জন্য। 
-    // যদি হিন্দি চান তবে hl=hi ব্যবহার করতে পারেন।
-    const targetUrl = `https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmyaccount.google.com%2Fsigninoptions%2Fpassword%3Fhl%3Dta&Email=${userEmail}&hl=ta&service=accountsettings&flowName=GlifWebSignIn&flowEntry=ServiceLogin`;
-    
-    window.location.href = targetUrl;
-}
